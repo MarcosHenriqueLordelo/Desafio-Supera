@@ -6,10 +6,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import MainNav from './navigators/MainNav';
 
-import light from './themes/light';
+import useContext from './context/useContext';
 
 const App: React.FC = () => {
-  const theme = light;
+  const {theme} = useContext();
 
   return (
     <ThemeProvider theme={theme}>
