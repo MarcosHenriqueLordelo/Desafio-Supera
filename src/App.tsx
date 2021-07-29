@@ -16,8 +16,8 @@ const App: React.FC = () => {
       <SafeAreaView style={{flex: 1}}>
         <StatusBar
           animated={true}
-          backgroundColor={theme.colors.background}
-          barStyle={theme.title === 'light' ? 'dark-content' : 'light-content'}
+          backgroundColor={theme.colors.primary}
+          barStyle={'light-content'}
         />
         <MainNav />
       </SafeAreaView>
