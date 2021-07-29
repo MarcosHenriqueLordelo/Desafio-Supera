@@ -32,12 +32,7 @@ const Index: React.FC<TypeProps> = ({onSearch}) => {
               onPress={() => navigation.dispatch(StackActions.push('Cart'))}
             />
           ) : (
-            <Icon
-              name="shopping-cart"
-              color={theme.colors.white}
-              size={24}
-              onPress={() => navigation.dispatch(StackActions.push('Cart'))}
-            />
+            <Icon name="shopping-cart" color={theme.colors.white} size={24} />
           )}
           <Icon
             containerStyle={{marginLeft: 20}}

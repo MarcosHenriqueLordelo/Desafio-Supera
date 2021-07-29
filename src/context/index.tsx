@@ -1,7 +1,9 @@
-import React, {createContext, useState, useEffect, useCallback} from 'react';
+import React, {createContext, useState, useEffect} from 'react';
 import {DefaultTheme} from 'styled-components';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {Alert} from 'react-native';
 
 // Types
 import Cart from '../models/cart';
@@ -98,6 +100,9 @@ export const ContextProvider: React.FC = ({children}) => {
 
   const buy = () => {
     setCart(empytCart);
+    Alert.alert('Compra Finalizada', 'Compra realizada com sucesso', [
+      {text: 'OK'},
+    ]);
   };
 
   const toggleTheme = () => {
