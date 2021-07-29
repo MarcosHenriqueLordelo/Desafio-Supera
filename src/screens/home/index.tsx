@@ -36,31 +36,25 @@ const Index: React.FC = () => {
       return productName.indexOf(searchText) > -1;
     });
 
-    setfiltered(filteredDemands);
-  }, [searchValue, products]);
-
-  // TODO: Consertar Atualização da lista ao filtrar
-
-  useEffect(() => {
     if (sortType === 1) {
-      const aux = filtered.sort((firstEl, secondEl) =>
+      const aux = filteredDemands.sort((firstEl, secondEl) =>
         firstEl.price > secondEl.price ? 1 : -1,
       );
       setSorted(aux);
     } else if (sortType === 2) {
-      const aux = filtered.sort((firstEl, secondEl) =>
+      const aux = filteredDemands.sort((firstEl, secondEl) =>
         firstEl.score > secondEl.score ? -1 : 1,
       );
       setSorted(aux);
     } else if (sortType == 3) {
-      const aux = filtered.sort((firstEl, secondEl) =>
+      const aux = filteredDemands.sort((firstEl, secondEl) =>
         firstEl.name > secondEl.name ? 1 : -1,
       );
       setSorted(aux);
     } else {
-      setSorted(filtered);
+      setSorted(filteredDemands);
     }
-  }, [filtered, sortType]);
+  }, [searchValue, products, sortType]);
 
   return (
     <Container>
@@ -91,7 +85,7 @@ const Index: React.FC = () => {
             handleRem={() => remProduct(item)}
           />
         ))}
-        <View style={{height: 20}} />
+        <View style={{height: 6}} />
       </ProductsList>
     </Container>
   );

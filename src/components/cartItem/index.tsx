@@ -1,25 +1,23 @@
 import React from 'react';
 import Product from '../../models/product';
 
-import useContext from '../../context/useContext';
+import {View} from 'react-native';
+import {Icon} from 'react-native-elements';
 
 import {
   Container,
   ProductImg,
   Content,
-  LblName,
-  LblScore,
   BottomView,
+  LblName,
   LblPrice,
+  LblScore,
 } from './styles';
-
-import {View} from 'react-native';
-import {Icon} from 'react-native-elements';
+import useContext from '../../context/useContext';
 
 type TypeProps = {
-  product: Product;
-  handleAdd: () => void;
-  handleRem: () => void;
+  onRemove: () => void;
+  cartItem: Product;
 };
 
 const images: {[key: number]: any} = {
@@ -34,26 +32,24 @@ const images: {[key: number]: any} = {
   501: require('../../assets/games/horizon-zero-dawn.png'),
 };
 
-const Index: React.FC<TypeProps> = ({product, handleAdd, handleRem}) => {
-  const {theme, isInCart} = useContext();
+const Index: React.FC<TypeProps> = ({onRemove, cartItem}) => {
+  const {theme} = useContext();
 
   return (
     <Container>
-      <ProductImg source={images[product.id]} resizeMode="contain" />
+      <ProductImg source={images[cartItem.id]} resizeMode="contain" />
       <Content>
         <View>
-          <LblName>{product.name}</LblName>
-          <LblScore>{`${product.score} pts`}</LblScore>
+          <LblName>{cartItem.name}</LblName>
+          <LblScore>{`${cartItem.score} pts`}</LblScore>
         </View>
         <BottomView>
-          <LblPrice>{`R$ ${product.price}`}</LblPrice>
+          <LblPrice>{`R$ ${cartItem.price}`}</LblPrice>
           <Icon
-            name="shopping-cart"
+            name="remove-shopping-cart"
             size={24}
-            color={
-              isInCart(product.id) ? theme.colors.secondary : theme.colors.gray
-            }
-            onPress={() => (isInCart(product.id) ? handleRem() : handleAdd())}
+            color={theme.colors.secondary}
+            onPress={onRemove}
           />
         </BottomView>
       </Content>

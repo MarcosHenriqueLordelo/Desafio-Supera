@@ -10,6 +10,7 @@ export const Container = styled(View)`
   padding-top: 10px;
   padding-bottom: 20px;
   align-items: center;
+  height: 110px;
 `;
 
 export const Header = styled(View)`

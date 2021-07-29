@@ -3,13 +3,8 @@ import {View, Image, Text} from 'react-native';
 
 export const Container = styled(View)`
   width: 100%;
-  background-color: ${props => props.theme.colors.cardBg};
-  border-radius: 10px;
-  flex-direction: row;
-  align-items: center;
   height: 130px;
-  padding: 10px;
-  margin-bottom: 10px;
+  flex-direction: row;
 `;
 
 export const ProductImg = styled(Image)`
@@ -23,8 +18,8 @@ export const Content = styled(View)`
   height: 100%;
   align-items: flex-start;
   justify-content: space-between;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 `;
 
 export const LblName = styled(Text)`

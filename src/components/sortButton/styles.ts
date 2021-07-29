@@ -3,7 +3,7 @@ import {TouchableOpacity, Text} from 'react-native';
 
 export const Container = styled(TouchableOpacity)`
   width: 60px;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.secondary};
   padding: 2px;
   margin-right: 10px;
   align-items: center;

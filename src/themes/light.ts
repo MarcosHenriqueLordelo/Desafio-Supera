@@ -2,8 +2,8 @@ export default {
   title: 'light',
 
   colors: {
-    primary: '#2751B8',
-    secondary: '#FF6E6E',
+    primary: '#612F74',
+    secondary: '#FF8901',
     background: '#FFFFFF',
     cardBg: '#F0F1F5',
     white: '#FFFFFF',

@@ -25,9 +25,10 @@ type TypeContext = {
   loadProducts: () => void;
 };
 
-const empytCart = {
+const empytCart: Cart = {
   items: [],
   value: 0,
+  shipping: 0,
 };
 
 const Context = createContext<TypeContext>({} as TypeContext);
@@ -68,7 +69,6 @@ export const ContextProvider: React.FC = ({children}) => {
   };
 
   const addProduct = (product: Product) => {
-
     if (isInCart(product.id)) return;
 
     const items = [...cart.items, product];
@@ -76,7 +76,10 @@ export const ContextProvider: React.FC = ({children}) => {
     let value = 0;
     items.forEach(item => (value = value + item.price));
 
-    setCart({items, value});
+    let shipping = 0;
+    if (value < 250) shipping = items.length * 10;
+
+    setCart({items, value, shipping});
   };
 
   const remProduct = (product: Product) => {
@@ -87,7 +90,10 @@ export const ContextProvider: React.FC = ({children}) => {
     let value = 0;
     items.forEach(item => (value = value + item.price));
 
-    setCart({items, value});
+    let shipping = 0;
+    if (value < 250) shipping = items.length * 10;
+
+    setCart({items, value, shipping});
   };
 
   const buy = () => {
