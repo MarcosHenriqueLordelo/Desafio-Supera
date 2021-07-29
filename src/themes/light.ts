@@ -4,8 +4,10 @@ export default {
   colors: {
     primary: '#612F74',
     secondary: '#FF6E6E',
-    background: '#F2F2F2',
+    background: '#FFFFFF',
+    cardBg: '#F0F1F5',
     white: '#FFFFFF',
-    font: '#4D4D4D',
+    gray: '#737373',
+    font: '#000000',
   },
 };

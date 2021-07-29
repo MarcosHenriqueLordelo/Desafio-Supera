@@ -22,7 +22,7 @@ const Index: React.FC = () => {
             <Icon name="shopping-cart" color={theme.colors.white} size={24} />
           )}
           <Icon
-            containerStyle={{marginLeft: 10}}
+            containerStyle={{marginLeft: 20}}
             size={24}
             name={theme.title === 'light' ? 'brightness-5' : 'nightlight-round'}
             onPress={toggleTheme}

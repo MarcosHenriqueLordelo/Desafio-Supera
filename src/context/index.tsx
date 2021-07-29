@@ -1,4 +1,4 @@
-import React, {createContext, useState, useEffect} from 'react';
+import React, {createContext, useState, useEffect, useCallback} from 'react';
 import {DefaultTheme} from 'styled-components';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -59,14 +59,16 @@ export const ContextProvider: React.FC = ({children}) => {
   }, []);
 
   const isInCart = (productId: number): boolean => {
+    let isIn = false;
     cart.items.forEach(item => {
-      if (item.id === productId) return true;
+      if (item.id === productId) isIn = true;
     });
 
-    return false;
+    return isIn;
   };
 
   const addProduct = (product: Product) => {
+
     if (isInCart(product.id)) return;
 
     const items = [...cart.items, product];

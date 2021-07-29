@@ -13,7 +13,7 @@ type TypeProps = {
 const Index: React.FC<TypeProps> = ({onChangeText}) => {
   const {theme} = useContext();
 
-  const [value, setValue] = useState<string>('asdasd');
+  const [value, setValue] = useState<string>('');
 
   const handleChange = (text: string) => {
     setValue(text);
