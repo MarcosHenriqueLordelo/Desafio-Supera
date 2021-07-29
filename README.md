@@ -21,8 +21,8 @@ Aplicatio criado para responder ao desafio proposto pela Supera Tecnologia, que 
 
 ### **Lista de Produtos**
 
-<img src="./src/assets/screenshots/home-claro.png" width="10%" height="10%"> <img src="./src/assets/screenshots/home-escuro.png" width="10%" height="10%"><br>
+<img src="./src/assets/screenshots/home-claro.png" width="20%" height="20%"> <img src="./src/assets/screenshots/home-escuro.png" width="10%" height="10%"><br>
 
 ### **Carrinho**
 
-<img src="./src/assets/screenshots/carrinho-claro.png" width="10%" height="10%"> <img src="./src/assets/screenshots/carrinho-escuro.png" width="10%" height="10%"><br>
+<img src="./src/assets/screenshots/carrinho-claro.png" width="20%" height="20%"> <img src="./src/assets/screenshots/carrinho-escuro.png" width="10%" height="10%"><br>
