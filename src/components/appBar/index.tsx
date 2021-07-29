@@ -5,7 +5,11 @@ import useContext from '../../context/useContext';
 
 import TextInput from '../textInput';
 
-const Index: React.FC = () => {
+type TypeProps = {
+  onSearch: (text: string) => void;
+};
+
+const Index: React.FC<TypeProps> = ({onSearch}) => {
   const {theme, toggleTheme, cart} = useContext();
 
   const BgIcon = withBadge(cart.items.length)(Icon);
@@ -31,7 +35,7 @@ const Index: React.FC = () => {
         </ButtonsContainer>
       </Header>
       <SearchIput>
-        <TextInput onChangeText={text => console.log(text)} />
+        <TextInput onChangeText={onSearch} />
       </SearchIput>
     </Container>
   );

@@ -15,7 +15,7 @@ export const Container = styled(View)`
 export const ProductImg = styled(Image)`
   width: 90px;
   height: 100%;
-  margin-right: 6px;
+  margin-right: 10px;
 `;
 
 export const Content = styled(View)`
@@ -31,7 +31,7 @@ export const LblName = styled(Text)`
 `;
 
 export const LblScore = styled(Text)`
-  margin-top: 2;
+  margin-top: 2px;
   font-size: 18px;
   color: ${props => props.theme.colors.font};
 `;
